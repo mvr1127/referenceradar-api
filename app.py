@@ -28,5 +28,5 @@ async def get_chapters(url: str = Query(...)):
             "duration": data.get("duration"),
             "chapters": chapters
         }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Failed to extract chapters")
+except Exception as e:
+    raise HTTPException(status_code=500, detail=f"Failed to extract chapters: {str(e)}")
